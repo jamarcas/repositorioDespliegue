@@ -6,7 +6,7 @@
 <body>
 
 <h1>Icono del día</h1>
-
+Saludo Inicial
 <img src="randomicon.php"/>
 
 </body>
