@@ -1,21 +1,23 @@
 <?php
+	$instancia=$_SERVER["WEBSITE_INSTANCE_ID"];
+	echo "Instancia: " . $instancia;
+	
+	setImageHeaders();
+	returnImageData(chooseRandomPic('icons'));
 
-setImageHeaders();
-returnImageData(chooseRandomPic('icons'));
+	function chooseRandomPic($dir = '.'){
+	    $files = glob($dir . '/*.*');
+	    $file = array_rand($files);
+	    return $files[$file];
+	}
 
-function chooseRandomPic($dir = '.'){
-    $files = glob($dir . '/*.*');
-    $file = array_rand($files);
-    return $files[$file];
-}
+	function setImageHeaders(){
+		header('Content-Type: image/jpeg');
+	}
 
-function setImageHeaders(){
-	header('Content-Type: image/jpeg');
-}
-
-function returnImageData($image){
-    readfile($image);
-}
+	function returnImageData($image){
+	    readfile($image);
+	}
 
 
 
